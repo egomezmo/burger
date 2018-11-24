@@ -2,8 +2,7 @@
 
   <div class="jumbotron text-center">
     <h1>Eat-Da-Burger!</h1>
-    <img src="http://img.time2draw.com/2015/01/How-to-Draw-Burger-Food-final-step-215x382.png" alt="BURGER" height="200"
-      width="100" />
+    <img src="/assets/images/burger01.jpg" alt="BURGER" height="200" width="140" />
   </div>
 
   <div class="container">
@@ -11,36 +10,33 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
         <ol>
-          {{#each cats}}      
-          {{#if sleepy}}
 
+          {{#each burgers}}
+          {{#if devoured}}
 
           {{> burger/burger-block sleep=false}}
 
-          
           {{/if}}
           {{/each}}
+
         </ol>
 
       </div>
       <div class="col-sm-5">
         <ol>
-          {{#each cats}}
-          {{#unless sleepy}}
-
+          {{#each burgers}}
+          {{#unless devoured}}
 
           {{> burger/burger-block2 sleep=true}}
-
-
 
           {{/unless}}
           {{/each}}
         </ol>
-        <BR>
+
       </div>
 
     </div>
-
+    <hr>
     <div class=row>
 
       <div class="col-sm-4"></div>
@@ -49,16 +45,15 @@
         <form class="create-form">
 
           <div class="form-group">
-            <input class="form-control" rows="5" id="ca" name="name"></input>
-            <p>ENTER A BURGER YOU WANT TO EAT AND SUMMIT</p>
-          </div>
-          <button type="submit" class="btn btn-primary">SUMMIT</button>
 
-          <div class="form-group">
+            <p align="center"><b>ENTER A BURGER YOU WANT TO EAT AND SUMMIT </b></p>
+            <input class="form-control" id="ca" name="burger_name"></input>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">SUMMIT</button>
 
-            <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-            <input type="radio" name="sleepy" value="0"> Awake
           </div>
+
+          <div class="form-group"></div>
 
         </form>
       </div>
